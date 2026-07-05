@@ -231,7 +231,6 @@ order by cohort;
 -- 5. СЕГМЕНТАЦИЯ ПО ТИПАМ АКТИВНОСТИ
 
 -- Определяем паттерны поведения пользователей
-explain(analyse, buffers)
 create temp table activity_kind as (
 	select 
 		uc.user_id,
@@ -423,4 +422,4 @@ order by cohort, rank;
 -- 7. ОЧИСТКА ВРЕМЕННЫХ ТАБЛИЦ
 drop table if exists clean_users;
 drop table if exists user_cohorts;
-drop table if exists user_behavior;
+drop table if exists activity_kind;
